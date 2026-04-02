@@ -3,11 +3,12 @@ import type {
   AxiosRequestConfig,
   InternalAxiosRequestConfig,
 } from "axios";
+import { API_GATEWAY } from "../constants/api";
 import { toAppError } from "../utils/errorMessage";
 import { getStoredToken, getStoredRefreshToken, clearAuthStorage, isProtectedPath } from "../utils/authHelpers";
 import { refreshToken as refreshAccessToken } from "../services/authService";
 
-const apiUrl = "/api";
+const apiUrl = `${API_GATEWAY}/api`;
 
 export type CustomAxiosRequestConfig = AxiosRequestConfig & {
   skipAuth?: boolean;
@@ -48,7 +49,8 @@ api.interceptors.request.use(
     // Keep URL resolution stable: baseURL is /api, so normalize /api/* -> /*
     // to avoid generating /api/api/* on requests that already include /api prefix.
     if (
-      config.baseURL === "/api" &&
+      typeof config.baseURL === "string" &&
+      /\/api$/i.test(config.baseURL) &&
       typeof config.url === "string" &&
       config.url.startsWith("/api/")
     ) {

@@ -4,6 +4,7 @@ import { getActiveRewards } from "../../services/rewardService";
 import { confirmRedeem } from "../../services/redemptionService";
 import pointsBalanceService from "../../services/PointsBalanceService";
 import loyaltyService from "../../services/loyaltyService";
+import { API_GATEWAY } from "../../constants/api";
 import type { Reward } from "../../types/reward";
 import type { CustomerRedemptionResponse } from "../../types/redemption";
 
@@ -15,7 +16,7 @@ const RewardOffer = () => {
   const [redeemResult, setRedeemResult] = useState<CustomerRedemptionResponse | null>(null);
   const [currentBalance, setCurrentBalance] = useState<number>(0);
 
-  const BASE_IMAGE_URL = "/api/engagement-service/uploads/rewards/";
+  const BASE_IMAGE_URL = `${API_GATEWAY}/api/engagement-service/uploads/rewards/`;
 
   // ================= FETCH API =================
   useEffect(() => {

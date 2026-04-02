@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Save, X } from "lucide-react";
+import { backendApiUrl } from "./apiBase";
 
 async function getProductById(id) {
-  const res = await fetch(`/api/suppliers/products/search?productId=${id}`);
+  const res = await fetch(backendApiUrl(`/api/suppliers/products/search?productId=${id}`));
   if (!res.ok) throw new Error('Unable to fetch product.');
   const data = await res.json();
   return data.result?.content?.length > 0 ? data.result.content[0] : null;
 }
 
 async function updateProduct(supplierId, productId, updateData) {
-  const res = await fetch(`/api/suppliers/${supplierId}/products/${productId}`, {
+  const res = await fetch(backendApiUrl(`/api/suppliers/${supplierId}/products/${productId}`), {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updateData),

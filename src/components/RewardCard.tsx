@@ -1,4 +1,5 @@
 import type { Reward } from '../types/reward';
+import { API_GATEWAY } from '../constants/api';
 import './RewardCard.css';
 
 interface RewardCardProps {
@@ -6,7 +7,7 @@ interface RewardCardProps {
   onRedeem: (reward: Reward) => void;
 }
 
-const BASE_IMAGE_URL = "/api/engagement-service/uploads/rewards/";
+const BASE_IMAGE_URL = `${API_GATEWAY}/api/engagement-service/uploads/rewards/`;
 
 const RewardCard = ({ reward, onRedeem }: RewardCardProps) => {
 

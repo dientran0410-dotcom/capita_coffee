@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Edit, Package, Filter, History } from "lucide-react";
+import { backendApiUrl } from "./apiBase";
 
 async function getSupplierById(id) {
-  const res = await fetch(`/api/suppliers/${id}`);
+  const res = await fetch(backendApiUrl(`/api/suppliers/${id}`));
   if (!res.ok) throw new Error('Unable to fetch supplier details.');
   const data = await res.json();
   return data.result;
@@ -12,14 +13,14 @@ async function getSupplierById(id) {
 async function getProductsBySupplierId(supplierId, params = { page: 0, size: 10 }) {
   const query = new URLSearchParams();
   Object.keys(params).forEach((k) => { if (params[k] !== '' && params[k] != null) query.append(k, params[k]); });
-  const res = await fetch(`/api/suppliers/${supplierId}/products?${query.toString()}`);
+  const res = await fetch(backendApiUrl(`/api/suppliers/${supplierId}/products?${query.toString()}`));
   if (!res.ok) throw new Error('Unable to fetch supplier products.');
   const data = await res.json();
   return data.result;
 }
 
 async function updateSupplierProduct(supplierId, productId, dataBody) {
-  const res = await fetch(`/api/suppliers/${supplierId}/products/${productId}`, {
+  const res = await fetch(backendApiUrl(`/api/suppliers/${supplierId}/products/${productId}`), {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json', USER: 'admin_user' },
     body: JSON.stringify(dataBody),

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, User, Clock, PlusCircle, Edit3, CheckCircle, AlertCircle } from "lucide-react";
+import { backendApiUrl } from "./apiBase";
 
 async function getSupplierAuditLogs(supplierId, page = 0, size = 10) {
-  const res = await fetch(`/api/suppliers/${supplierId}/audit-logs?page=${page}&size=${size}`);
+  const res = await fetch(backendApiUrl(`/api/suppliers/${supplierId}/audit-logs?page=${page}&size=${size}`));
   if (!res.ok) throw new Error('Unable to fetch audit logs.');
   const data = await res.json();
   return data.result;

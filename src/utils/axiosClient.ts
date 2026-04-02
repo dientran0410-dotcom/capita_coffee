@@ -5,6 +5,7 @@
 
 import { getLoggedInBranchId } from './branch';
 import { toAppError } from './errorMessage';
+import { API_GATEWAY } from '../constants/api';
 
 const DEFAULT_HEADERS: Record<string, string> = {
   'Content-Type': 'application/json',
@@ -176,7 +177,7 @@ function buildCandidates(path: string): string[] {
 
 function toUrl(path: string): string {
   const isAbsolute = /^https?:\/\//i.test(path);
-  return isAbsolute ? path : `/api${path}`;
+  return isAbsolute ? path : `${API_GATEWAY}/api${path}`;
 }
 
 export async function http(path: string, options: HttpOptions = {}) {

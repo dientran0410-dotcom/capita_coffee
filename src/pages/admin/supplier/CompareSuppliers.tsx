@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Star, DollarSign, Clock } from "lucide-react";
+import { backendApiUrl } from "./apiBase";
 
 async function compareSuppliers(productId) {
-  const res = await fetch(`/api/suppliers/products/${productId}/compare`);
+  const res = await fetch(backendApiUrl(`/api/suppliers/products/${productId}/compare`));
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || 'Unable to fetch comparison data.');
   return data.result;

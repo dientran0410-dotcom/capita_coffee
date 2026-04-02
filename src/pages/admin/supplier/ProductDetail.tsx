@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, DollarSign, Clock, CheckCircle, Ban } from "lucide-react";
+import { backendApiUrl } from "./apiBase";
 
 async function getProductById(id) {
-  const res = await fetch(`/api/suppliers/products/search?productId=${id}`);
+  const res = await fetch(backendApiUrl(`/api/suppliers/products/search?productId=${id}`));
   if (!res.ok) throw new Error('Unable to fetch product.');
   const data = await res.json();
   return data.result?.content?.length > 0 ? data.result.content[0] : null;

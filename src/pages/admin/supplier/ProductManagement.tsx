@@ -2,18 +2,19 @@ import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye, Edit, Ban, CheckCircle } from "lucide-react";
 import { useAuth } from "../../../context/AuthContext";
+import { backendApiUrl } from "./apiBase";
 
 async function getProducts(params = {}) {
   const query = new URLSearchParams();
   Object.keys(params).forEach((k) => { if (params[k] !== '' && params[k] != null) query.append(k, params[k]); });
-  const res = await fetch(`/api/suppliers/products/search?${query.toString()}`);
+  const res = await fetch(backendApiUrl(`/api/suppliers/products/search?${query.toString()}`));
   if (!res.ok) { const err = await res.json().catch(() => ({})); throw new Error(err.message || 'Unable to fetch products.'); }
   const data = await res.json();
   return data.result;
 }
 
 async function toggleProductStatus(supplierId, productId, body = {}) {
-  const res = await fetch(`/api/suppliers/${supplierId}/products/${productId}`, {
+  const res = await fetch(backendApiUrl(`/api/suppliers/${supplierId}/products/${productId}`), {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
