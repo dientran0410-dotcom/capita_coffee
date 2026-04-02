@@ -45,6 +45,16 @@ const api = axios.create({
 // ================= REQUEST =================
 api.interceptors.request.use(
   (config: InternalAxiosRequestConfig & { skipAuth?: boolean }) => {
+    // Keep URL resolution stable: baseURL is /api, so normalize /api/* -> /*
+    // to avoid generating /api/api/* on requests that already include /api prefix.
+    if (
+      config.baseURL === "/api" &&
+      typeof config.url === "string" &&
+      config.url.startsWith("/api/")
+    ) {
+      config.url = config.url.slice(4);
+    }
+
     const token = getStoredToken();
     const url = config.url || "";
     const fullUrl =
