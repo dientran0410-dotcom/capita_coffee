@@ -54,7 +54,7 @@ const menuByRole: Record<UserRole, MenuItem[]> = {
     { id: "redeem", label: "Redeem", icon: <History size={20} />, path: "/admin/redeem" },
     { id: "users", label: "User Management", icon: <Users size={20} />, path: "/admin/users" },
     { id: "permissions", label: "Permission Management", icon: <Lock size={20} />, path: "/admin/permissions" },
-    { id: "reports", label: "Reports", icon: <FileText size={20} />, path: "/admin/reports" },
+    // { id: "reports", label: "Reports", icon: <FileText size={20} />, path: "/admin/reports" },
     { id: "notification", label: "Notification", icon: <Bell size={20} />, path: "/admin/notification" },
   ],
   manager: [
