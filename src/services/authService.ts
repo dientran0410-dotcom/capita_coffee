@@ -3,8 +3,8 @@ import { toAppError } from '../utils/errorMessage';
 
 /**
  * ===== AUTH SERVICE API FUNCTIONS =====
- * All functions call real API from: https://auth-service-wq2a.onrender.com
- * Endpoint base: /api/auth-service/auth/
+ * All functions call via FE domain using /api rewrite/proxy.
+ * Endpoint base: /api/auth-service/
  */
 
 type AnyObj = Record<string, any>;

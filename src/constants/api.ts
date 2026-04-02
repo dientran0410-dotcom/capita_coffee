@@ -24,9 +24,6 @@
 
 const normalizeUrl = (value: string) => value.replace(/\/+$/, "");
 
-const normalizeAuthServiceHost = (value: string) =>
-  normalizeUrl(value).replace(/\/api\/auth-service$/i, "");
-
 // Central API gateway constant used across the frontend.
 // DEV: requests should go through Vite proxy (/api) to avoid CORS.
 export const API_GATE_WAY = normalizeUrl(
@@ -34,14 +31,8 @@ export const API_GATE_WAY = normalizeUrl(
 );
 export const API_GATEWAY = API_GATE_WAY;
 
-// Auth service base.
-// DEV: keep empty so `${AUTH_SERVICE_URL}/api/...` becomes `/api/...` and uses Vite proxy.
-export const AUTH_SERVICE_URL = import.meta.env.DEV
-  ? ""
-  : normalizeAuthServiceHost(
-      import.meta.env.VITE_AUTH_SERVICE_URL ||
-        "https://auth-service-wq2a.onrender.com"
-    );
+// Always keep auth-service calls relative so they go through FE domain (/api rewrite/proxy).
+export const AUTH_SERVICE_URL = "";
 
 // Service endpoint prefixes
 export const API_ENDPOINT = {
