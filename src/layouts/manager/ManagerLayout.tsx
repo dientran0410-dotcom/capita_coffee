@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SideBar from "../../components/layout/SideBar";
+import SideBar from "../../components/layout/Sidebar";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { appToastContainerProps, installAlertAsToast } from "../../utils/toast";

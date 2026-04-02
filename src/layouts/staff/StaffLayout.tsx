@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import StaffSidebar from "../staff/StaffSideBar";
+import StaffSidebar from "../staff/StaffSidebar";
 import "./StaffLayout.css";
 
 interface Props {

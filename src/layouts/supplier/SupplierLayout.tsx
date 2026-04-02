@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import SideBar from "../../components/layout/SideBar";
+import SideBar from "../../components/layout/Sidebar";
 
 const SupplierLayout = () => {
   return (
