@@ -1,0 +1,364 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Confirm Modal Specific */
+.redemption-confirm-modal {
+  padding: 32px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.modal-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-logo-icon {
+  font-size: 24px;
+}
+
+.modal-logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2a9d8f;
+}
+
+.current-balance-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: linear-gradient(135deg, #2a9d8f 0%, #1d7a6e 100%);
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: white;
+}
+
+.balance-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.balance-value {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #264653;
+  margin: 0 0 24px 0;
+}
+
+/* Reward Preview */
+.reward-preview {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.reward-preview-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.reward-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #f4a261;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reward-preview-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 24px 16px 16px;
+}
+
+.reward-preview-name {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Points Status */
+.points-status {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.points-status.sufficient {
+  background: #d4edda;
+  border: 2px solid #28a745;
+}
+
+.points-status.insufficient {
+  background: #f8d7da;
+  border: 2px solid #dc3545;
+}
+
+.status-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.points-status.sufficient .status-icon {
+  color: #28a745;
+}
+
+.points-status.insufficient .status-icon {
+  color: #dc3545;
+}
+
+.status-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.status-text p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Transaction Summary */
+.transaction-summary {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  margin: 0 0 16px 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #264653;
+}
+
+.summary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #264653;
+}
+
+.summary-value.negative {
+  color: #e63946;
+}
+
+.summary-value.positive {
+  color: #2a9d8f;
+  font-size: 20px;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #dee2e6;
+  margin: 16px 0;
+}
+
+.summary-total {
+  margin-top: 16px;
+}
+
+.summary-total .summary-label {
+  font-weight: 600;
+}
+
+/* Note */
+.redemption-note {
+  font-size: 13px;
+  color: #6c757d;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 0 24px 0;
+  padding: 0 20px;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn-cancel,
+.btn-confirm {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel {
+  background: #f8f9fa;
+  color: #264653;
+}
+
+.btn-cancel:hover {
+  background: #e9ecef;
+}
+
+.btn-confirm {
+  background: linear-gradient(135deg, #2a9d8f 0%, #1d7a6e 100%);
+  color: white;
+}
+
+.btn-confirm:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d7a6e 0%, #146259 100%);
+  transform: scale(1.02);
+}
+
+.btn-confirm:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.secure-icon {
+  font-size: 16px;
+}
+
+.secure-text {
+  font-weight: 500;
+}
+
+.transaction-id {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .modal-content {
+    margin: 20px;
+    max-height: calc(100vh - 40px);
+  }
+
+  .redemption-confirm-modal {
+    padding: 24px;
+  }
+
+  .modal-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .current-balance-badge {
+    align-self: stretch;
+    align-items: center;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}

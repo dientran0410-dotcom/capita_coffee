@@ -1,0 +1,305 @@
+/* Success Modal Specific */
+.redemption-success-modal {
+  padding: 40px 32px 32px;
+  text-align: center;
+}
+
+/* Success Header */
+.success-header {
+  margin-bottom: 32px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #2a9d8f 0%, #1d7a6e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(42, 157, 143, 0.3);
+}
+
+.trophy-icon {
+  font-size: 40px;
+}
+
+.success-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #264653;
+  margin: 0 0 12px 0;
+}
+
+.success-message {
+  font-size: 15px;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Reward Success Card */
+.reward-success-card {
+  background: linear-gradient(135deg, #264653 0%, #2a9d8f 100%);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(38, 70, 83, 0.2);
+}
+
+.reward-card-header {
+  margin-bottom: 24px;
+}
+
+.reward-card-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.reward-card-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.reward-card-qr {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 60px 0;
+}
+
+.qr-code-box {
+  width: 200px;
+  height: 200px;
+}
+
+.qr-code-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.reward-card-details {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+
+  margin-top: 40px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.detail-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.detail-value.negative {
+  color: #ff6b6b;
+}
+
+.detail-value.positive {
+  color: #51cf66;
+  font-size: 18px;
+}
+
+.detail-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 12px 0;
+}
+
+/* Transaction ID Section */
+.transaction-id-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.transaction-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.transaction-id-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.transaction-id-value {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #264653;
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: transform 0.2s;
+}
+
+.copy-btn:hover {
+  transform: scale(1.1);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+/* Redemption Instructions */
+.redemption-instructions {
+  margin-bottom: 24px;
+}
+
+.instruction-text {
+  font-size: 14px;
+  color: #264653;
+  margin: 0 0 8px 0;
+}
+
+.expiry-notice {
+  font-size: 13px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.expiry-notice strong {
+  color: #e63946;
+  font-weight: 700;
+}
+
+/* Success Actions */
+.success-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-view-history,
+.btn-back-rewards {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-view-history {
+  background: white;
+  color: #2a9d8f;
+  border: 2px solid #2a9d8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-view-history:hover {
+  background: #2a9d8f;
+  color: white;
+}
+
+.btn-icon {
+  font-size: 16px;
+}
+
+.btn-back-rewards {
+  background: linear-gradient(135deg, #2a9d8f 0%, #1d7a6e 100%);
+  color: white;
+}
+
+.btn-back-rewards:hover {
+  background: linear-gradient(135deg, #1d7a6e 0%, #146259 100%);
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .redemption-success-modal {
+    padding: 32px 24px 24px;
+  }
+
+  .success-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .trophy-icon {
+    font-size: 32px;
+  }
+
+  .success-title {
+    font-size: 24px;
+  }
+
+  .qr-code-box {
+    width: 200px;
+   height: 200px;
+   background: white;
+   border-radius: 12px;
+   padding: 12px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+  }
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+  .transaction-id-value {
+    font-size: 14px;
+  }
+  .qr-image {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   display: block;
+}
+}

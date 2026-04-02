@@ -1,0 +1,32 @@
+.staff-layout *,
+.staff-layout *::before,
+.staff-layout *::after {
+  box-sizing: border-box;
+}
+
+.staff-layout{
+  display:flex;
+  min-height:100vh;
+  width:100%;
+  overflow-x:hidden;
+}
+
+/* sidebar */
+.staff-sidebar{
+  width:260px;
+  flex-shrink:0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* main content */
+.staff-main{
+  flex:1;
+  margin-left: 260px;
+  padding:40px;
+  background:#f4f6f8;
+  min-height: 100vh;
+}

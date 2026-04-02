@@ -1,0 +1,412 @@
+/* 
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #0df259;
+  --color-background-light: #f5f8f6;
+  --color-background-dark: #102216;
+  --font-display: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes check-pop {
+  0%   { transform: scale(0) rotate(-10deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(4deg); opacity: 1; }
+  80%  { transform: scale(0.92) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes ring-ping {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-check-pop {
+  animation: check-pop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.animate-ring-ping {
+  animation: ring-ping 1.4s ease-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease both;
+}
+
+@keyframes cancel-pop {
+  0%   { transform: scale(0) rotate(10deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(-4deg); opacity: 1; }
+  80%  { transform: scale(0.92) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes ring-ping-red {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.animate-cancel-pop {
+  animation: cancel-pop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.animate-ring-ping-red {
+  animation: ring-ping-red 1.4s ease-out infinite;
+}
+
+@keyframes ping-slow {
+  0%   { transform: scale(1); opacity: 0.4; }
+  75%, 100% { transform: scale(1.6); opacity: 0; }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+:root {
+  font-family: system-ui, Avenir, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+} */
+
+@import "tailwindcss";
+
+/* ---------------- BASE ---------------- */
+
+:root {
+  font-family: system-ui, Avenir, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------- BODY ---------------- */
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* ---------------- INPUT FIXES ---------------- */
+/*
+  Microsoft Edge injects a built-in "reveal password" (eye) icon for <input type="password">.
+  Since we already render a custom eye button, this causes *double eye icons*.
+*/
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear {
+  display: none;
+}
+
+/* ---------------- LINKS ---------------- */
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* ---------------- HEADINGS ---------------- */
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* ---------------- BUTTON ---------------- */
+/* KHÔNG set background để Tailwind control */
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* ---------------- LIGHT MODE ---------------- */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+}
+
+/* ---------------- TAILWIND THEME ---------------- */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Material Design 3 Colors */
+  --color-primary: #006a33;
+  --color-primary-container: #3fff8b;
+  --color-primary-fixed: #3fff8b;
+  --color-primary-fixed-dim: #24f07e;
+  --color-on-primary: #cdffd3;
+  --color-on-primary-fixed: #004820;
+  --color-on-primary-fixed-variant: #006832;
+  --color-on-primary-container: #005d2c;
+
+  --color-secondary: #006945;
+  --color-secondary-container: #74fbbb;
+  --color-secondary-fixed: #74fbbb;
+  --color-secondary-fixed-dim: #65ecae;
+  --color-on-secondary: #c9ffde;
+  --color-on-secondary-fixed: #00492f;
+  --color-on-secondary-container: #005e3d;
+
+  --color-tertiary: #006575;
+  --color-tertiary-container: #00dcfd;
+  --color-tertiary-fixed: #00dcfd;
+  --color-on-tertiary: #dcf7ff;
+
+  --color-surface: #f6f6f6;
+  --color-surface-dim: #d3d5d5;
+  --color-surface-bright: #f6f6f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f1f1;
+  --color-surface-container: #e7e8e8;
+  --color-surface-container-high: #e1e3e3;
+  --color-surface-container-highest: #dbdddd;
+  --color-on-surface: #2d2f2f;
+  --color-on-surface-variant: #5a5c5c;
+
+  --color-background: #f6f6f6;
+  --color-on-background: #2d2f2f;
+
+  --color-outline: #767777;
+  --color-outline-variant: #acadad;
+
+  --color-error: #b31b25;
+  --color-error-container: #fb5151;
+  --color-on-error: #ffefee;
+  --color-on-error-container: #570008;
+
+  --color-inverse-surface: #0c0f0f;
+  --color-inverse-on-surface: #9c9d9d;
+  --color-inverse-primary: #3fff8b;
+
+  /* Legacy colors for backwards compatibility */
+  --color-background-light: #f5f8f6;
+  --color-background-dark: #102216;
+
+  /* Font Families */
+  --font-headline: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+
+@keyframes check-pop {
+  0%   { transform: scale(0) rotate(-10deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(4deg); opacity: 1; }
+  80%  { transform: scale(0.92) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes ring-ping {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-check-pop {
+  animation: check-pop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.animate-ring-ping {
+  animation: ring-ping 1.4s ease-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease both;
+}
+
+.animate-gradient {
+  background: linear-gradient(90deg, #3fff8b, #24f07e, #3fff8b);
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ---------------- CANCEL ANIMATION ---------------- */
+
+@keyframes cancel-pop {
+  0%   { transform: scale(0) rotate(10deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(-4deg); opacity: 1; }
+  80%  { transform: scale(0.92) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes ring-ping-red {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.animate-cancel-pop {
+  animation: cancel-pop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.animate-ring-ping-red {
+  animation: ring-ping-red 1.4s ease-out infinite;
+} 
+/* ---------------- SMOOTH SCROLL ---------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------- CUSTOM UTILITIES ---------------- */
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.primary-gradient {
+  background: linear-gradient(135deg, #006a33, #3fff8b);
+}
+
+.hero-gradient {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent);
+}
+
+/* ---------------- MATERIAL SYMBOLS ICONS ---------------- */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

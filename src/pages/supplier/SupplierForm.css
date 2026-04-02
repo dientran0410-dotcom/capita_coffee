@@ -1,0 +1,352 @@
+.supplier-form-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.supplier-form-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 80px 20px;
+  color: #64748b;
+}
+
+.supplier-form-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.supplier-form-back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+
+.supplier-form-back-btn:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.supplier-form-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.supplier-form-title {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.supplier-form-subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.supplier-alert {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.supplier-alert-success {
+  color: #15803d;
+  background: #ecfdf3;
+  border-color: #bbf7d0;
+}
+
+.supplier-alert-error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.supplier-form-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+.supplier-form-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.supplier-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.supplier-form-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.supplier-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.supplier-form-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.supplier-form-col-span-2 {
+  grid-column: span 2;
+}
+
+.supplier-form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.supplier-input-wrap {
+  position: relative;
+}
+
+.supplier-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.supplier-input,
+.supplier-textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  transition: all 0.16s ease;
+}
+
+.supplier-input.with-icon {
+  padding-left: 40px;
+}
+
+.supplier-input:focus,
+.supplier-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+}
+
+.supplier-select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #64748b 50%), linear-gradient(135deg, #64748b 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 13px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.supplier-textarea {
+  resize: vertical;
+  min-height: 92px;
+}
+
+.supplier-field-error {
+  margin-top: 6px;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.supplier-status-wrap {
+  position: relative;
+  max-width: 320px;
+}
+
+.supplier-status-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.supplier-status-input {
+  padding-left: 38px;
+  font-weight: 700;
+}
+
+.supplier-input-readonly {
+  background: #f8fafc;
+  color: #475569;
+  cursor: not-allowed;
+}
+
+.supplier-status-input.status-approved {
+  border-color: #86efac;
+  color: #15803d;
+}
+
+.supplier-status-input.status-pending {
+  border-color: #fcd34d;
+  color: #b45309;
+}
+
+.supplier-status-input.status-suspended {
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.supplier-status-input.status-rejected {
+  border-color: #fdba74;
+  color: #c2410c;
+}
+
+.supplier-status-input.status-default {
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+.supplier-form-footer {
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.supplier-success-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.supplier-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.supplier-btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.supplier-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.supplier-btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.supplier-btn-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.supplier-btn-secondary {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+.supplier-btn-secondary:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.supplier-spin {
+  animation: supplierSpin 0.9s linear infinite;
+}
+
+@keyframes supplierSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .supplier-form-grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  .supplier-form-col-span-2 {
+    grid-column: span 1;
+  }
+
+  .supplier-form-header {
+    align-items: flex-start;
+  }
+
+  .supplier-form-title {
+    font-size: 22px;
+  }
+
+  .supplier-form-footer {
+    align-items: stretch;
+  }
+
+  .supplier-form-actions {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+}

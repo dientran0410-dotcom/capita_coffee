@@ -1,0 +1,336 @@
+/* --- LAYOUT --- */
+.category-page-wrapper { 
+  background: #fdfaf8; 
+  min-height: 100vh; 
+  font-family: 'Inter', -apple-system, sans-serif; 
+}
+
+/* TOP NAV (Nút Back) */
+.top-nav-bar {
+  padding: 20px 60px 0;
+  background: #fdfaf8;
+}
+
+.btn-back-link {
+  background: none;
+  border: none;
+  color: #8d7a71;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s;
+}
+
+.btn-back-link:hover {
+  color: #7b3f1b;
+  transform: translateX(-4px);
+}
+
+/* TAB HEADER ĐỒNG BỘ */
+.item-tab-header {
+  background: #fff;
+  padding: 0 60px;
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #efebe9;
+  margin-top: 10px;
+}
+
+.tab-btn {
+  background: none; 
+  border: none; 
+  padding: 20px 0;
+  font-weight: 600; 
+  color: #8d7a71; 
+  cursor: pointer; 
+  font-size: 14px;
+  position: relative; 
+  transition: 0.3s;
+}
+
+.tab-btn.active { color: #7b3f1b; }
+.tab-btn.active::after {
+  content: ""; 
+  position: absolute; 
+  bottom: -1px; 
+  left: 0; 
+  width: 100%; 
+  height: 3px; 
+  background: #7b3f1b;
+}
+
+/* CONTENT */
+.category-page-content { 
+  padding: 30px 60px; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
+
+.header-flex { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 25px; 
+}
+
+.header-flex h1 { 
+  font-size: 24px; 
+  font-weight: 700; 
+  color: #3e2723; 
+  margin: 0; 
+}
+
+.category-subtitle {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #8d7a71;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.status-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #efebe9;
+}
+
+.status-filter-group span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8d7a71;
+}
+
+.status-filter-group select {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3e2723;
+  cursor: pointer;
+  background: transparent;
+}
+
+.btn-add-main {
+  background: #7b3f1b; 
+  color: #fff; 
+  border: none; 
+  padding: 10px 22px;
+  border-radius: 8px; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: 0.3s;
+}
+.btn-add-main:hover { background: #5d2e13; }
+
+/* TABLE */
+.table-container { 
+  background: #fff; 
+  border-radius: 12px; 
+  border: 1px solid #efebe9; 
+  overflow: hidden; 
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.05);
+}
+
+.category-table { width: 100%; border-collapse: collapse; }
+.category-table th { 
+  background: #faf9f8; 
+  padding: 16px; 
+  text-align: left; 
+  color: #8d7a71; 
+  border-bottom: 1px solid #efebe9; 
+  font-size: 12px; 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.category-table td { 
+  padding: 16px; 
+  border-bottom: 1px solid #f8f6f5; 
+  color: #3e2723; 
+  font-size: 14px; 
+  vertical-align: middle;
+}
+
+.empty-cell {
+  text-align: center;
+  color: #8d7a71;
+  padding: 28px 16px;
+}
+
+/* Hiển thị danh mục Inactive */
+.row-inactive {
+  background-color: #fafafa;
+}
+.row-inactive td {
+  color: #a1887f; /* Làm mờ chữ */
+}
+.row-inactive strong {
+  font-weight: 500;
+}
+
+/* STATUS PILL */
+.status-pill {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.status-pill.active { background: #e8f5e9; color: #2e7d32; }
+.status-pill.inactive { background: #efebe9; color: #8d7a71; }
+
+.linked-items-note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #8d7a71;
+}
+
+/* ACTION BUTTONS */
+.action-buttons { display: flex; gap: 8px; }
+
+.btn-edit-sm, .btn-delete-sm {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #efebe9;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #fff;
+}
+
+.btn-edit-sm { color: #3498db; border-color: #d6eaf8; }
+.btn-edit-sm:hover { background: #3498db; color: #fff; }
+
+.btn-delete-sm { color: #e74c3c; border-color: #fadbd8; }
+.btn-delete-sm:hover:not(.disabled) { background: #e74c3c; color: #fff; }
+
+.btn-delete-sm.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+/* MODAL */
+.modal-overlay { 
+  position: fixed; 
+  inset: 0; 
+  background: rgba(62, 39, 35, 0.4); 
+  backdrop-filter: blur(4px);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 1000; 
+}
+
+.item-modal-xl { 
+  background: #fff; 
+  width: 500px; 
+  border-radius: 16px; 
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15); 
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.item-modal-xl h2 { 
+  padding: 24px 30px; 
+  margin: 0; 
+  font-size: 20px; 
+  border-bottom: 1px solid #efebe9;
+  color: #3e2723;
+}
+
+.form-scroll-area { 
+  padding: 24px 30px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+}
+
+.form-scroll-area label { 
+  font-size: 13px; 
+  font-weight: 700; 
+  color: #3e2723; 
+  margin-top: 12px; 
+}
+
+.form-scroll-area input, 
+.form-scroll-area textarea, 
+.form-scroll-area select { 
+  padding: 12px; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  font-size: 14px; 
+  background: #fafafa;
+  transition: 0.2s;
+}
+
+.form-scroll-area input:focus, 
+.form-scroll-area textarea:focus { 
+  outline: none; 
+  border-color: #7b3f1b; 
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(123, 63, 27, 0.1);
+}
+
+.custom-textarea { resize: none; }
+
+.status-helper-text {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8d7a71;
+}
+
+.modal-actions { 
+  padding: 20px 30px 30px; 
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 12px; 
+}
+
+.btn-cancel { 
+  background: #fff; 
+  border: 1px solid #ddd; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-weight: 600;
+  color: #8d7a71;
+}
+
+.btn-save { 
+  background: #7b3f1b; 
+  color: #fff; 
+  border: none; 
+  padding: 10px 24px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-weight: 700; 
+}
+
+.btn-save:hover { background: #5d2e13; }
+
+.btn-cancel:disabled,
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

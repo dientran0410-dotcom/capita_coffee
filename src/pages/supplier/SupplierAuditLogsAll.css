@@ -1,0 +1,266 @@
+.supplier-audit-all-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.supplier-audit-all-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.supplier-audit-all-header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #0f172a;
+}
+
+.supplier-audit-all-header p {
+  margin: 6px 0 0;
+  color: #475569;
+}
+
+.supplier-audit-all-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.audit-all-alert {
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.audit-all-alert-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.audit-all-meta {
+  display: flex;
+  gap: 16px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.audit-all-table-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.audit-all-table-scroll {
+  overflow-x: auto;
+}
+
+.audit-all-table-card table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.audit-all-table-card th,
+.audit-all-table-card td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+.audit-all-table-card th {
+  background: #f8fafc;
+  color: #475569;
+}
+
+.audit-all-empty {
+  text-align: center;
+  color: #64748b;
+  padding: 28px;
+}
+
+.audit-all-action {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.audit-all-action-create {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.audit-all-action-update {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.audit-all-action-delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.audit-all-action-other {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.audit-all-time-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.audit-all-time-date {
+  font-size: 13px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.audit-all-time-hour {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.audit-all-link-btn {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: #fff;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+.audit-all-link-btn:hover {
+  background: #eff6ff;
+}
+
+.audit-all-detail-row td {
+  background: #f8fafc;
+}
+
+.audit-all-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.audit-all-profile-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.audit-all-profile-card h4 {
+  margin: 0 0 8px;
+  color: #334155;
+}
+
+.audit-all-profile-card p {
+  margin: 0 0 6px;
+  color: #334155;
+  font-size: 13px;
+}
+
+.audit-all-profile-card p:last-child {
+  margin-bottom: 0;
+}
+
+.audit-all-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.audit-all-detail-grid h4 {
+  margin: 0 0 6px;
+  color: #334155;
+}
+
+.audit-all-field-list {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.audit-all-field-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.audit-all-field-row:last-child {
+  border-bottom: none;
+}
+
+.audit-all-field-row.is-changed {
+  background: #fefce8;
+}
+
+.audit-all-field-label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.audit-all-field-value {
+  font-size: 13px;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.audit-all-no-structured {
+  margin: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  color: #475569;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.audit-all-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.audit-all-pagination-info {
+  font-weight: 600;
+  color: #475569;
+}
+
+@media (max-width: 900px) {
+  .supplier-audit-all-header {
+    flex-direction: column;
+  }
+
+  .supplier-audit-all-actions {
+    width: 100%;
+  }
+
+  .audit-all-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-all-field-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .audit-all-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
