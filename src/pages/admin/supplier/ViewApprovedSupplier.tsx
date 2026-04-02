@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye } from "lucide-react";
-import { backendApiUrl } from "./apiBase";
 
 async function getApprovedSuppliers(page = 0, size = 10) {
-  const res = await fetch(backendApiUrl(`/api/suppliers/approved?page=${page}&size=${size}`));
+  const res = await fetch(`/api/suppliers/approved?page=${page}&size=${size}`);
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || 'Unable to fetch approved suppliers.');
   return data.result;

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type MouseEvent } from "react";
 import { createReward, updateReward } from "../services/rewardService";
 import franchiseService, { extractFranchiseList } from "../services/franchiseService";
-import { API_GATEWAY } from "../constants/api";
 
 interface RewardDetailModalProps {
   reward: any | null;
@@ -54,7 +53,7 @@ export default function RewardDetailModal({
   const isView = mode === "view";
   const isEdit = mode === "edit";
   const isCreate = mode === "create";
-  const BASE_IMAGE_URL = `${API_GATEWAY}/api/engagement-service/uploads/rewards/`;
+  const BASE_IMAGE_URL = "/api/engagement-service/uploads/rewards/";
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
   const [formData, setFormData] = useState({

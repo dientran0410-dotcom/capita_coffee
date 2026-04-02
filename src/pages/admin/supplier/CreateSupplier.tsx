@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Building2, Mail, Phone, MapPin, FileText, Factory, Save, Loader } from "lucide-react";
 import { useAuth } from "../../../context/AuthContext";
 import { showSuccessToast } from "@/utils/toast";
-import { backendApiUrl } from "./apiBase";
 
 async function createSupplier(dataBody, user) {
-  const res = await fetch(backendApiUrl('/api/suppliers'), {
+  const res = await fetch('/api/suppliers', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', USER: user },
     body: JSON.stringify(dataBody),

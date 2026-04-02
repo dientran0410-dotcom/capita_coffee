@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Save, Loader, Activity } from "lucide-react";
 import { useAuth } from "../../../context/AuthContext";
-import { backendApiUrl } from "./apiBase";
 
 async function getSupplierById(id) {
-  const res = await fetch(backendApiUrl(`/api/suppliers/${id}`));
+  const res = await fetch(`/api/suppliers/${id}`);
   if (!res.ok) throw new Error('Unable to fetch supplier details.');
   const data = await res.json();
   return data.result;
 }
 
 async function updateSupplier(id, dataBody, user) {
-  const res = await fetch(backendApiUrl(`/api/suppliers/${id}`), {
+  const res = await fetch(`/api/suppliers/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', USER: user },
     body: JSON.stringify(dataBody),

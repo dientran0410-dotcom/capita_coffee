@@ -25,10 +25,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Link } from "react-router-dom";
-import { backendApiUrl } from "./apiBase";
 
 async function getAllSuppliersInDashboard(page = 0, size = 10) {
-  const res = await fetch(backendApiUrl(`/api/suppliers/all-statuses?page=${page}&size=${size}`));
+  const res = await fetch(`/api/suppliers/all-statuses?page=${page}&size=${size}`);
   if (!res.ok) throw new Error('Unable to fetch supplier list.');
   const data = await res.json();
   return data.result;

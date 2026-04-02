@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye, CheckCircle, Ban, Plus, Trash2 } from "lucide-react";
 import { useAuth } from "../../../context/AuthContext";
-import { backendApiUrl } from "./apiBase";
 
 async function getAllSuppliers(page = 0, size = 10) {
-  const res = await fetch(backendApiUrl(`/api/suppliers?page=${page}&size=${size}`));
+  const res = await fetch(`/api/suppliers?page=${page}&size=${size}`);
   if (!res.ok) throw new Error('Unable to fetch supplier list.');
   const data = await res.json();
   return data.result;
@@ -14,21 +13,21 @@ async function getAllSuppliers(page = 0, size = 10) {
 async function filterSuppliers(params) {
   const query = new URLSearchParams();
   Object.keys(params).forEach((k) => { if (params[k] !== '' && params[k] != null) query.append(k, params[k]); });
-  const res = await fetch(backendApiUrl(`/api/suppliers/filter?${query.toString()}`));
+  const res = await fetch(`/api/suppliers/filter?${query.toString()}`);
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || 'Filter failed.');
   return data.result;
 }
 
 async function searchSuppliersByKeyword(keyword, page = 0, size = 10) {
-  const res = await fetch(backendApiUrl(`/api/suppliers/search?keyword=${encodeURIComponent(keyword)}&page=${page}&size=${size}`));
+  const res = await fetch(`/api/suppliers/search?keyword=${encodeURIComponent(keyword)}&page=${page}&size=${size}`);
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || 'Search failed.');
   return data.result;
 }
 
 async function toggleSuspend(id, user) {
-  const res = await fetch(backendApiUrl(`/api/suppliers/${id}/toggle-suspend`), {
+  const res = await fetch(`/api/suppliers/${id}/toggle-suspend`, {
     method: 'PATCH',
     headers: { USER: user },
   });
@@ -39,7 +38,7 @@ async function toggleSuspend(id, user) {
 
 async function reviewSupplier(id, status, user, reason = '') {
   const res = await fetch(
-    backendApiUrl(`/api/suppliers/${id}/review?status=${status}&reason=${encodeURIComponent(reason)}`),
+    `/api/suppliers/${id}/review?status=${status}&reason=${encodeURIComponent(reason)}`,
     { method: 'PATCH', headers: { USER: user } }
   );
   const data = await res.json();
@@ -48,7 +47,7 @@ async function reviewSupplier(id, status, user, reason = '') {
 }
 
 async function deleteSupplier(id, userName = 'admin_user') {
-  const res = await fetch(backendApiUrl(`/api/suppliers/${id}`), {
+  const res = await fetch(`/api/suppliers/${id}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json', USER: userName },
   });
