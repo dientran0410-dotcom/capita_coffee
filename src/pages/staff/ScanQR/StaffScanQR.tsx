@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { checkRedemption } from "../../../services/redemptionService";
-import type { QRCheckResponse } from "../../../types/Redemption";
+import type { QRCheckResponse } from "../../../types/redemption";
 import { useAuth } from "../../../context/AuthContext";
 import "./StaffScanQR.css";
 

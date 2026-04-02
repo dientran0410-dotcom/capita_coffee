@@ -10,7 +10,7 @@ import {
 	X,
 } from "lucide-react";
 import { getMyRedemptionHistory } from "../../../services/redemptionService";
-import type { CustomerRedemptionResponse } from "../../../types/Redemption";
+import type { CustomerRedemptionResponse } from "../../../types/redemption";
 
 type RedeemStatus =
 	| "COMPLETED"

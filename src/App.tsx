@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import MainRoute from "../src/routes/MainRoute";
+import MainRoute from "@/routes/MainRoute";
 
 import { RouteChangeLoader } from "./components/common/RouteChangeLoader";
 

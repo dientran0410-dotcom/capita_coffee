@@ -6,7 +6,7 @@ import {
   REDEMPTION_GET_ID,
   REDEMPTION_MY_HISTORY
 } from "../constants/apiEndPoints";
-import type { CustomerRedemptionResponse } from "../types/Redemption";
+import type { CustomerRedemptionResponse } from "../types/redemption";
 
 const toApiUrl = (url: string) => {
   if (!import.meta.env.DEV) {

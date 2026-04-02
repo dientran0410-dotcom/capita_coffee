@@ -5,7 +5,7 @@ import { confirmRedeem } from "../../services/redemptionService";
 import pointsBalanceService from "../../services/PointsBalanceService";
 import loyaltyService from "../../services/loyaltyService";
 import type { Reward } from "../../types/reward";
-import type { CustomerRedemptionResponse } from "../../types/Redemption";
+import type { CustomerRedemptionResponse } from "../../types/redemption";
 
 const RewardOffer = () => {
   const [rewards, setRewards] = useState<Reward[]>([]);

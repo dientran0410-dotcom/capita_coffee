@@ -6,8 +6,8 @@ import type {
   RedemptionSummary,
   RedemptionFilters,
   CustomerRedemptionResponse,
-} from '../../../types/Redemption';
-import { RedemptionStatus } from '../../../types/Redemption';
+} from '../../../types/redemption';
+import { RedemptionStatus } from '../../../types/redemption';
 import { getAllRedemption } from '../../../services/redemptionService';
 
 type RedemptionHistoryItem = RedemptionHistory & {
