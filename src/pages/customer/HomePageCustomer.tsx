@@ -762,7 +762,7 @@ export default function GuestPage() {
                 }
 
                 console.log(`🚀 Loading products from API (attempt ${attempt}/${maxAttempts})...`);
-                console.log('API Base URL:', import.meta.env.DEV ? '/api' : 'https://api-gate-way-3ds5.onrender.com');
+                console.log('API Base URL:', '/api');
 
                 const response = await getProducts({
                     page: 0,

@@ -15,7 +15,7 @@ const RewardOffer = () => {
   const [redeemResult, setRedeemResult] = useState<CustomerRedemptionResponse | null>(null);
   const [currentBalance, setCurrentBalance] = useState<number>(0);
 
-  const BASE_IMAGE_URL = import.meta.env.VITE_API_GATEWAY + "/api/engagement-service/uploads/rewards/";
+  const BASE_IMAGE_URL = "/api/engagement-service/uploads/rewards/";
 
   // ================= FETCH API =================
   useEffect(() => {

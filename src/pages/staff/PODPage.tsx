@@ -681,7 +681,7 @@ export default function GuestPage() {
                 }
 
                 console.log(`🚀 Loading products from API (attempt ${attempt}/${maxAttempts})...`);
-                console.log('API Base URL:', import.meta.env.DEV ? '/api' : 'https://api-gate-way.onrender.com');
+                console.log('API Base URL:', '/api');
 
                 const response = await getProducts({ page: 0, size: 100, status: 'ACTIVE' });
                 const items = Array.isArray(response?.content) ? response.content : [];

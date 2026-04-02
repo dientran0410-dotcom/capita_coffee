@@ -8,8 +8,7 @@ export const PRODUCT_URL = "/products/";
 export const POINTS_URL = "/points";
 
 // Payment/Product service URLs
-// Always use relative paths so DEV goes through Vite proxy (/api -> VITE_API_GATEWAY)
-// and PROD calls API gateway directly.
+// Always use FE-relative paths so requests go through /api proxy/rewrite.
 export const CART_URL = `/api/products/cart`;
 export const CART_ADD_URL = `/api/products/cart/add`;
 export const CART_ITEM_URL = `/api/products/cart/item`;

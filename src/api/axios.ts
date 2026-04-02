@@ -3,12 +3,11 @@ import type {
   AxiosRequestConfig,
   InternalAxiosRequestConfig,
 } from "axios";
-import { API_GATEWAY } from "../constants/api";
 import { toAppError } from "../utils/errorMessage";
 import { getStoredToken, getStoredRefreshToken, clearAuthStorage, isProtectedPath } from "../utils/authHelpers";
 import { refreshToken as refreshAccessToken } from "../services/authService";
 
-const apiUrl = import.meta.env.DEV ? "/api" : API_GATEWAY;
+const apiUrl = "/api";
 
 export type CustomAxiosRequestConfig = AxiosRequestConfig & {
   skipAuth?: boolean;
@@ -46,16 +45,6 @@ const api = axios.create({
 // ================= REQUEST =================
 api.interceptors.request.use(
   (config: InternalAxiosRequestConfig & { skipAuth?: boolean }) => {
-    // In DEV mode: Remove /api/ prefix (baseURL is already /api)
-    // In PROD mode: Keep /api/ prefix (gateway will handle routing)
-    if (
-      config.baseURL === "/api" &&
-      typeof config.url === "string" &&
-      config.url.startsWith("/api/")
-    ) {
-      config.url = config.url.slice(4);
-    }
-
     const token = getStoredToken();
     const url = config.url || "";
     const fullUrl =

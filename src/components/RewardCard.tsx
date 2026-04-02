@@ -6,8 +6,7 @@ interface RewardCardProps {
   onRedeem: (reward: Reward) => void;
 }
 
-// ✅ dùng env
-const BASE_IMAGE_URL = import.meta.env.VITE_API_GATEWAY + "/api/engagement-service/uploads/rewards/";
+const BASE_IMAGE_URL = "/api/engagement-service/uploads/rewards/";
 
 const RewardCard = ({ reward, onRedeem }: RewardCardProps) => {
 
